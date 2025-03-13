@@ -1,15 +1,29 @@
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import vazirFont from "@/constants/localFonts";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata = {
-  title: "Next Shop Panel",
-  description: "Admin panel shop",
+  title: "next shop",
+  description: "next-shop panel admin",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fa">
-      <body className={`${vazirFont.variable} font-sans`}>{children}</body>
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
